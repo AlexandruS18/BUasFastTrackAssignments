@@ -25,7 +25,7 @@ namespace Tmpl8
         color clr;
     };
     // initializing the array
-    BonusArray array[14] = {};
+    BonusArray array[16] = {};
     // -----------------------------------------------------------
     // Initialize the application
     // -----------------------------------------------------------
@@ -42,14 +42,16 @@ namespace Tmpl8
         array[5] = { 300, 240, 300, 480, GREEN };
         array[6] = { 240, 480, 300, 480, GREEN };
         // letter D
-        array[7] = { 360, 480, 420, 480, BLUE };
+        array[7] = { 360, 480, 390, 480, BLUE };
         array[8] = { 360, 240, 360, 480, BLUE };
-        array[9] = { 360, 240, 420, 480, BLUE };
+        array[9] = { 420, 320, 420, 440, BLUE };
+        array[10] = { 360, 240, 420, 320, BLUE };
+        array[11] = { 390, 480, 420, 440, BLUE };
         // letter E
-        array[10] = { 480, 240, 600, 240, YELLOW };
-        array[11] = { 480, 240, 480, 480, YELLOW };
-        array[12] = { 480, 480, 600, 480, YELLOW };
-        array[13] = { 480, 360, 600, 360, YELLOW };
+        array[12] = { 480, 240, 560, 240, YELLOW };
+        array[13] = { 480, 240, 480, 480, YELLOW };
+        array[14] = { 480, 480, 560, 480, YELLOW };
+        array[15] = { 480, 360, 560, 360, YELLOW };
     }
 
     void Game::Shutdown()
