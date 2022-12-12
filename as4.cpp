@@ -28,11 +28,6 @@ namespace Tmpl8
 	// Main application tick function
 	// -----------------------------------------------------------
 	void Game::Tick(float deltaTime)
-	{
-
-		// clear the graphics window
-		screen->Clear(0);
-	void Game::Tick(float deltaTime)
    	{
 
 		// clear the graphics window
