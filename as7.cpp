@@ -3,6 +3,7 @@
 #include "surface.h"
 #include <cstdio>
 #include <cassert>
+#include <cstdint>
 
 // surface.cpp assignment code
 /*
@@ -31,23 +32,24 @@ namespace Tmpl8
     void Game::Init() {}
     void Game::Shutdown() {}
     // use any image you want
-    Surface image("assets/FF10_wakka.png"); // image is always has to be 50x50 or else its broken...
-    const int bWidth = ScreenWidth / image.GetWidth();
-    const int bHeight = ScreenHeight / image.GetHeight();
+    Surface image("assets/wakkaNew.png"); // wakkaNew.png -> use any image
     const int imgSize = image.GetPitch();
+
+    float bWidth = (1.0f * ScreenWidth / image.GetWidth());
+    float bHeight = (1.0f * ScreenHeight / image.GetHeight());
 
 
     void Game::Tick(float deltaTime)
     {
         screen->Clear(0);
 
-        for (int x = 15; x < ScreenWidth; x += bWidth)
+        for (float x = 0.0f; x < ScreenWidth; x += bWidth)
         {
-            for (int y = 6; y < ScreenHeight; y += bHeight)
+            for (float y = 0.0f; y < ScreenHeight; y += bHeight)
             {
                 if (y + bHeight - 1 > ScreenHeight - 1) break;
 
-                Pixel p = image.GetBuffer()[(x / bWidth) + (y / bHeight) * imgSize];
+                Pixel p = image.GetBuffer()[static_cast<uint32_t>((x / bWidth) + (y / bHeight) * imgSize)];
                 int red = p & 0xff0000;
                 int green = p & 0x00ff00;
                 int blue = p & 0x0000ff;
